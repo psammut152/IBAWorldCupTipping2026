@@ -165,6 +165,74 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .foot{text-align:center;color:var(--muted);font-size:11.5px;padding:8px 0 0;margin-top:26px;border-top:1px solid var(--line)}
 .foot b{color:var(--forest)}
 .credits{margin-top:7px;font-size:12.5px;color:var(--muted);line-height:1.8}
+
+/* page nav */
+.pagenav{display:flex;gap:6px;margin:18px 0 0}
+.tab{flex:1 1 0;text-align:center;font-family:Archivo;font-weight:700;font-size:13.5px;color:#bfeed4;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);border-radius:10px 10px 0 0;padding:11px 20px;cursor:pointer;transition:.15s;border-bottom:0}
+.tab:hover{background:rgba(255,255,255,.14);color:#eafff4}
+.tab.active{background:var(--sand);color:var(--forest)}
+.page[hidden]{display:none}
+
+/* leaderboard page */
+.lb-card{min-height:calc(100vh - 230px)}
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;align-items:end;margin:6px 0 22px;max-width:840px;margin-left:auto;margin-right:auto}
+.pod{background:linear-gradient(180deg,#f4f8f5,#eaf3ee);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;position:relative}
+.pod[data-rank="1"]{padding-top:30px;background:linear-gradient(180deg,#fff7e0,#fff);border-color:#f6d27a}
+.pod[data-rank="2"]{padding-top:20px}
+.pod-medal{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:Archivo;font-weight:800;font-size:18px;margin:0 auto 10px;color:#3a2c00}
+.pod[data-rank="1"] .pod-medal{width:52px;height:52px;font-size:22px}
+.pod-name{font-family:Archivo;font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pod-pts{font-family:Archivo;font-weight:900;font-size:30px;color:var(--forest);margin-top:4px}
+.pod-pts span{font-size:13px;font-weight:600;color:var(--muted);margin-left:4px}
+.pod[data-rank="1"] .pod-pts{font-size:38px}
+.lb-list{column-count:2;column-gap:26px}
+@media(max-width:820px){.lb-list{column-count:1}.podium{max-width:none}}
+.lbrow{display:grid;grid-template-columns:34px 1.1fr 1fr 50px 48px;align-items:center;gap:10px;padding:9px 8px;border-radius:9px;break-inside:avoid}
+.lbrow:hover{background:var(--line-2)}
+.lbrow.sel{background:rgba(0,164,67,.12);outline:1px solid rgba(0,164,67,.35)}
+.lbpos{font-family:Archivo;font-weight:800;color:var(--muted);text-align:center;font-size:14px}
+.lbname{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lbbarwrap{height:9px;border-radius:5px;background:var(--line-2);overflow:hidden}
+.lbbar{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--green),var(--green-d))}
+.lbgap{font-size:12px;color:var(--muted);text-align:right;font-weight:600}
+.lbpts{font-family:Archivo;font-weight:800;font-size:16px;color:var(--forest);text-align:right}
+.lb-allpod{padding:30px;text-align:center;color:var(--muted)}
+
+/* insights page */
+.ins-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px}
+@media(max-width:980px){.ins-kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.ins-kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px 16px}
+.kpi-v{font-family:Archivo;font-weight:900;font-size:30px;color:var(--forest);line-height:1}
+.kpi-l{font-weight:700;font-size:12.5px;color:var(--ink);margin-top:7px}
+.kpi-s{font-size:11px;color:var(--muted);margin-top:2px}
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ins-wide{grid-column:1 / -1}
+@media(max-width:900px){.ins-grid{grid-template-columns:1fr}}
+.ins-sub,.ins-facts{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.ins-facts{display:flex;flex-direction:column;gap:6px}
+.ins-facts b{font-family:Archivo;color:var(--forest);font-size:15px}
+.ins-facts span{color:var(--muted)}
+.pick{font-weight:700;color:var(--forest)}
+.conf{font-size:11px;color:var(--blue);font-weight:700}
+.ins-minis{display:flex;flex-direction:column;gap:16px}
+.mini h4{margin:0 0 8px;font-family:Archivo;font-weight:700;font-size:13px;color:var(--forest)}
+.mini-row{display:grid;grid-template-columns:20px 1fr 70px 42px;align-items:center;gap:9px;padding:3px 0}
+.mini-rk{font-family:Archivo;font-weight:800;color:var(--muted);font-size:12px;text-align:center}
+.mini-nm{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini-bar{height:8px;border-radius:5px;background:var(--line-2);overflow:hidden}
+.mini-bar span{display:block;height:100%;border-radius:5px;background:var(--orange)}
+.mini-v{font-family:Archivo;font-weight:800;font-size:13px;color:var(--forest);text-align:right}
+.mini-empty{color:var(--muted);font-size:12px;padding:6px 0}
+.flawless{font-size:11.5px;font-weight:700;color:var(--orange)}
+.dbars{display:flex;flex-direction:column;gap:7px;max-height:330px;overflow:auto}
+.dbar{display:grid;grid-template-columns:52px 1fr 34px;align-items:center;gap:9px}
+.dbar-l{font-size:11.5px;color:var(--muted);font-weight:600;text-align:right}
+.dbar-t{height:16px;border-radius:5px;background:var(--line-2);overflow:hidden}
+.dbar-t span{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--blue),#0a5e8c)}
+.dbar-v{font-family:Archivo;font-weight:700;font-size:12px;color:var(--forest);text-align:right}
 </style>
 
 <div class="top">
@@ -185,6 +253,12 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 
   <div class="stages" id="stages"></div>
 
+  <nav class="pagenav" id="pagenav">
+    <button class="tab active" data-page="board">Board</button>
+    <button class="tab" data-page="leaderboard">Leaderboard</button>
+    <button class="tab" data-page="insights">Insights</button>
+  </nav>
+
   <div class="slicers">
     <div class="slicer"><label>Group</label><select id="fGroup"></select></div>
     <div class="slicer"><label>Team</label><select id="fTeam"></select></div>
@@ -194,6 +268,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 </div>
 
 <div class="wrap">
+  <div class="page" id="page-board">
   <div class="grid-top">
     <section class="card">
       <div class="card-h"><h2><i class="tick"></i>Leaderboard</h2><span class="meta" id="rankMeta"></span></div>
@@ -227,6 +302,21 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
       <div class="card-h"><h2><i class="tick"></i>Score Tipping Board</h2><span class="meta" id="sbMeta"></span></div>
       <div class="card-b" id="sbBox"></div>
     </section>
+  </div>
+  </div><!-- /page-board -->
+
+  <div class="page" id="page-leaderboard" hidden>
+    <section class="card lb-card">
+      <div class="card-h"><h2><i class="tick"></i>Leaderboard</h2><span class="meta" id="lbMeta"></span></div>
+      <div class="card-b">
+        <div id="lbPodium" class="podium"></div>
+        <div id="lbList" class="lb-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="page" id="page-insights" hidden>
+    <div id="insights"></div>
   </div>
 
   <div class="foot">
@@ -309,6 +399,7 @@ function parseDate(s){
   return new Date(+m[3],+m[2]-1,+m[1],h,+m[5]);
 }
 function fmtStageDate(s){const d=parseDate(s);if(!d)return'';return d.toLocaleDateString('en-AU',{day:'numeric',month:'short'});}
+function fmtDay(d){const p=(d||'').split('/');if(p.length<3)return d;const dt=new Date(+p[2],+p[1]-1,+p[0]);return dt.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'});}
 
 /* ---------- scoring engine (mirrors the TMDL model) ---------- */
 let MODEL = null;
@@ -385,18 +476,26 @@ function buildModel(){
 }
 
 /* ---------- filters ---------- */
-const STATE={group:'',team:'',name:''};
-function passSB(r){
-  if(STATE.name && r.user!==STATE.name) return false;
+const STATE={group:'',team:'',name:'',page:'board'};
+function passSB(r,ignoreName){
+  if(!ignoreName && STATE.name && r.user!==STATE.name) return false;
   if(STATE.group && r.group!==STATE.group) return false;
   if(STATE.team && r.teamA!==STATE.team && r.teamB!==STATE.team) return false;
   return true;
 }
-function passTB(r){
-  if(STATE.name && r.user!==STATE.name) return false;
+function passTB(r,ignoreName){
+  if(!ignoreName && STATE.name && r.user!==STATE.name) return false;
   if(STATE.group && r.group!==STATE.group) return false;
   if(STATE.team && r.team!==STATE.team) return false;
   return true;
+}
+// standings used by the full leaderboard page: group/team filter, name only highlights
+function computeStandings(){
+  if(!(STATE.group||STATE.team)) return MODEL.leaderboard;
+  const map={}; MODEL.leaderboard.forEach(u=>map[u.user]={user:u.user,name:u.name,points:0,seen:false});
+  MODEL.sbRows.forEach(r=>{if(passSB(r,true)){map[r.user].points+=r.points;map[r.user].seen=true;}});
+  MODEL.tbRows.forEach(r=>{if(passTB(r,true)){map[r.user].points+=r.points;map[r.user].seen=true;}});
+  return Object.values(map).filter(u=>u.seen).sort((a,b)=>b.points-a.points||a.name.localeCompare(b.name));
 }
 
 /* ---------- renderers ---------- */
@@ -583,6 +682,203 @@ function renderSubline(){
 
 function renderAll(){
   renderRank(); renderChamp(); renderTop2(); renderWC(); renderG2(); renderScoreBoard(); renderSubline();
+  renderLeaderboardPage(); renderInsights();
+}
+
+/* ---------- PAGE 2: full-screen leaderboard ---------- */
+function renderLeaderboardPage(){
+  const lb=computeStandings();
+  const max=Math.max(1,...lb.map(u=>u.points));
+  const leadPts=lb.length?lb[0].points:0;
+  const meta=document.getElementById('lbMeta');
+  let ctx=[]; if(STATE.group)ctx.push(STATE.group); if(STATE.team)ctx.push(STATE.team);
+  meta.textContent=`${lb.length} players${ctx.length?' · '+ctx.join(' · '):''}`;
+  const podiumEl=document.getElementById('lbPodium'), listEl=document.getElementById('lbList');
+  if(!lb.length){ podiumEl.innerHTML=''; listEl.innerHTML=emptyMsg('No players match these filters','clear a filter to see the standings'); return; }
+  // podium: top 3 (order 2,1,3 for visual)
+  const top=lb.slice(0,3), order=[1,0,2];
+  podiumEl.innerHTML=order.map(i=>{ const u=top[i]; if(!u) return '';
+    const rk=i+1;
+    return `<div class="pod" data-rank="${rk}">
+      <div class="pod-medal m${rk}">${rk}</div>
+      <div class="pod-name">${esc(u.name)}</div>
+      <div class="pod-pts tnum">${u.points}<span>pts</span></div></div>`;
+  }).join('');
+  // rest
+  const rest=lb.slice(3);
+  listEl.innerHTML = rest.length? rest.map((u,idx)=>{
+    const pos=idx+4; const w=Math.max(2,(u.points/max)*100);
+    const gap=leadPts-u.points;
+    const sel=STATE.name===u.user?' sel':'';
+    return `<div class="lbrow${sel}" data-user="${esc(u.user)}">
+      <span class="lbpos tnum">${pos}</span>
+      <span class="lbname">${esc(u.name)}</span>
+      <span class="lbbarwrap"><span class="lbbar" style="width:${w}%"></span></span>
+      <span class="lbgap tnum">${gap>0?'−'+gap:'—'}</span>
+      <span class="lbpts tnum">${u.points}</span></div>`;
+  }).join('') : `<div class="lb-allpod">Everyone's on the podium 🏆</div>`;
+  listEl.querySelectorAll('.lbrow').forEach(r=>r.onclick=()=>{
+    const u=r.dataset.user; STATE.name=STATE.name===u?'':u;
+    document.getElementById('fName').value=STATE.name; renderAll();
+  });
+}
+
+/* ---------- PAGE 3: insights ---------- */
+function mode(arr){const m={};let best=null,bc=0;arr.forEach(v=>{m[v]=(m[v]||0)+1;if(m[v]>bc){bc=m[v];best=v;}});return{value:best,count:bc};}
+function computeInsights(){
+  const rows=MODEL.sbRows.filter(r=>passSB(r,true)); // group/team filter, ignore name
+  // per match crowd predictions
+  const byMatch={};
+  rows.forEach(r=>{(byMatch[r.matchNo]=byMatch[r.matchNo]||{m:r,tips:[]}).tips.push(r);});
+  const crowd=Object.values(byMatch).map(({m,tips})=>{
+    const picks=tips.map(t=>t.winnerTip||'Draw');
+    const cp=mode(picks);
+    const sl=mode(tips.map(t=>t.aTip+'–'+t.bTip));
+    const goals=tips.reduce((s,t)=>s+(t.aTip||0)+(t.bTip||0),0)/tips.length;
+    return {matchNo:m.matchNo,teamA:m.teamA,teamB:m.teamB,group:m.group,n:tips.length,
+      pick:cp.value,conf:Math.round(cp.count/tips.length*100),scoreline:sl.value,
+      slPct:Math.round(sl.count/tips.length*100),goals:goals,
+      played:m.aScore!=null};
+  }).sort((a,b)=>a.matchNo-b.matchNo);
+  // per user behaviour
+  const u={};
+  rows.forEach(r=>{const x=u[r.user]=u[r.user]||{user:r.user,name:r.name,n:0,goals:0,draws:0,agree:0,agreeable:0};
+    x.n++; x.goals+=(r.aTip||0)+(r.bTip||0); if((r.winnerTip||'')==='Draw')x.draws++;
+    const cm=byMatch[r.matchNo]; if(cm&&cm.tips.length>=5){const cp=mode(cm.tips.map(t=>t.winnerTip||'Draw'));
+      x.agreeable++; if((r.winnerTip||'Draw')===cp.value)x.agree++;}
+  });
+  const users=Object.values(u);
+  const goalHappy=[...users].filter(x=>x.n>=3).map(x=>({name:x.name,v:(x.goals/x.n)})).sort((a,b)=>b.v-a.v).slice(0,6);
+  const drawLords=[...users].filter(x=>x.n>=3).map(x=>({name:x.name,v:x.draws})).sort((a,b)=>b.v-a.v).slice(0,6);
+  const contrarian=[...users].filter(x=>x.agreeable>=5).map(x=>({name:x.name,v:Math.round((1-x.agree/x.agreeable)*100)})).sort((a,b)=>b.v-a.v).slice(0,6);
+  const active=[...users].map(x=>({name:x.name,v:x.n})).sort((a,b)=>b.v-a.v);
+  // engagement: tips per match date
+  const dateMap={};
+  rows.forEach(r=>{const d=MODEL.matchById[r.matchNo]; const dt=(d&&d.startAt||'').split(' ')[0]; if(!dt)return; dateMap[dt]=(dateMap[dt]||0)+1;});
+  const byDate=Object.entries(dateMap).map(([d,v])=>({d,v}))
+    .sort((a,b)=>{const pa=a.d.split('/').reverse().join(''),pb=b.d.split('/').reverse().join('');return pa.localeCompare(pb);});
+  const mostTipped=crowd.slice().sort((a,b)=>b.n-a.n)[0];
+  const leastTipped=crowd.slice().sort((a,b)=>a.n-b.n)[0];
+  // perfect days: a user nailed every tip (result correct) on a single match day, 2+ tips
+  const pd={};
+  rows.forEach(r=>{ if(r.aScore==null) return;
+    const d=MODEL.matchById[r.matchNo]; const dt=(d&&d.startAt||'').split(' ')[0]; if(!dt) return;
+    const key=r.user+'|'+dt; const x=pd[key]=pd[key]||{user:r.user,name:r.name,date:dt,n:0,correct:0,exact:0};
+    x.n++; if(r.points>0)x.correct++; if(r.aTip===r.aScore&&r.bTip===r.bScore)x.exact++;
+  });
+  const perfectDays=Object.values(pd).filter(x=>x.n>=2 && x.correct===x.n)
+    .map(x=>({name:x.name,date:x.date,n:x.n,flawless:x.exact===x.n}))
+    .sort((a,b)=>{const pa=a.date.split('/').reverse().join(''),pb=b.date.split('/').reverse().join('');return pb.localeCompare(pa)||b.n-a.n;});
+  // KPIs
+  const tippers=new Set(rows.map(r=>r.user)).size;
+  const exact=rows.filter(r=>r.aScore!=null && r.aTip===r.aScore && r.bTip===r.bScore).length;
+  const ptsAwarded=rows.reduce((s,r)=>s+r.points,0)+MODEL.tbRows.filter(r=>passTB(r,true)).reduce((s,r)=>s+r.points,0);
+  const played=new Set(rows.filter(r=>r.aScore!=null).map(r=>r.matchNo)).size;
+  // accuracy (needs results)
+  const acc=[...users].map(x=>{ // recompute over played matches
+    let tot=0,hit=0,ex=0;
+    rows.filter(r=>r.user===x.user && r.aScore!=null).forEach(r=>{tot++; if(r.points>0)hit++; if(r.aTip===r.aScore&&r.bTip===r.bScore)ex++;});
+    return {name:x.name,tot,hit,ex,rate:tot?Math.round(hit/tot*100):0};
+  }).filter(x=>x.tot>=1).sort((a,b)=>b.rate-a.rate||b.ex-a.ex).slice(0,8);
+  return {crowd,goalHappy,drawLords,contrarian,active,byDate,mostTipped,leastTipped,perfectDays,
+    kpi:{participants:MODEL.leaderboard.length,tippers,tips:rows.length,
+      avg:tippers?(rows.length/tippers).toFixed(1):'0',played,ptsAwarded,exact},
+    acc, anyResults:MODEL.playedCount>0};
+}
+
+function miniList(title,arr,unit,fmt){
+  if(!arr.length) return `<div class="mini"><h4>${esc(title)}</h4><div class="mini-empty">—</div></div>`;
+  const max=Math.max(...arr.map(a=>a.v))||1;
+  return `<div class="mini"><h4>${esc(title)}</h4>${arr.map((a,i)=>`
+    <div class="mini-row"><span class="mini-rk">${i+1}</span><span class="mini-nm">${esc(a.name)}</span>
+    <span class="mini-bar"><span style="width:${Math.max(6,a.v/max*100)}%"></span></span>
+    <span class="mini-v tnum">${fmt?fmt(a.v):a.v}${unit||''}</span></div>`).join('')}</div>`;
+}
+
+function renderInsights(){
+  const el=document.getElementById('insights'); if(!el) return;
+  const I=computeInsights();
+  const k=I.kpi;
+  const kpiTiles=[
+    ['Participants',k.participants,'registered'],
+    ['Have tipped',k.tippers,'of '+k.participants],
+    ['Score tips in',k.tips,'predictions'],
+    ['Avg per tipper',k.avg,'tips each'],
+    ['Matches played',k.played,'with results'],
+    ['Points awarded',k.ptsAwarded,'so far'],
+  ].map(t=>`<div class="kpi"><div class="kpi-v tnum">${t[1]}</div><div class="kpi-l">${t[0]}</div><div class="kpi-s">${t[2]}</div></div>`).join('');
+
+  // crowd table
+  const crowdRows=I.crowd.slice(0,40).map(c=>`<tr>
+    <td class="num">${c.matchNo}</td><td>${esc(c.teamA)}</td><td>${esc(c.teamB)}</td>
+    <td class="num">${c.n}</td>
+    <td><span class="pick">${esc(c.pick||'—')}</span> <span class="conf">${c.conf}%</span></td>
+    <td class="num">${esc(c.scoreline||'—')}</td>
+    <td class="num">${c.goals.toFixed(1)}</td></tr>`).join('');
+
+  const accBody = I.anyResults && I.acc.length
+    ? `<div class="tablebox" style="max-height:300px"><table>
+        <thead><tr><th>Name</th><th class="num">Tipped</th><th class="num">Hit</th><th class="num">Exact</th><th class="num">Hit&nbsp;rate</th></tr></thead>
+        <tbody>${I.acc.map(a=>`<tr><td>${esc(a.name)}</td><td class="num">${a.tot}</td><td class="num">${a.hit}</td><td class="num">${a.ex}</td><td class="num"><b>${a.rate}%</b></td></tr>`).join('')}</tbody></table></div>`
+    : emptyMsg('Unlocks at kick-off','Accuracy, hit-rate and exact-score stats appear once match results start coming in.');
+
+  const pdBody = I.anyResults
+    ? (I.perfectDays.length
+       ? `<div class="tablebox" style="max-height:330px"><table>
+            <thead><tr><th>Name</th><th>Match day</th><th class="num">Swept</th><th></th></tr></thead>
+            <tbody>${I.perfectDays.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(fmtDay(p.date))}</td>
+              <td class="num"><span class="pts-pill pp">${p.n}/${p.n}</span></td>
+              <td>${p.flawless?'<span class="flawless">🌟 flawless — all exact</span>':''}</td></tr>`).join('')}</tbody>
+          </table></div>`
+       : emptyMsg('No perfect days yet','Get every tip on a single match day correct and you\u2019re in the club.'))
+    : emptyMsg('Unlocks at kick-off','Anyone who calls every one of their tips on a single match day (2+ matches) joins the Perfect Day Club.');
+
+  el.innerHTML = `
+  <div class="ins-kpis">${kpiTiles}</div>
+
+  <div class="ins-grid">
+    <section class="card ins-wide">
+      <div class="card-h"><h2><i class="tick"></i>The Office Oracle — what the crowd predicts</h2>
+        <span class="meta">${I.crowd.length} matches tipped</span></div>
+      <div class="card-b">
+        <div class="ins-sub">Before a ball is kicked: the most-tipped winner, confidence, and the popular scoreline for each match.</div>
+        <div class="tablebox" style="max-height:420px"><table>
+          <thead><tr><th class="num">No</th><th>Team A</th><th>Team B</th><th class="num">Tips</th><th>Crowd pick</th><th class="num">Top score</th><th class="num">Avg goals</th></tr></thead>
+          <tbody>${crowdRows||'<tr><td colspan="7">No tips in this filter.</td></tr>'}</tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-h"><h2><i class="tick"></i>Tipster personalities</h2><span class="meta">style, not skill</span></div>
+      <div class="card-b ins-minis">
+        ${miniList('⚽ Goal-happy (avg goals tipped)',I.goalHappy,'',v=>v.toFixed(1))}
+        ${miniList('🤝 Draw specialists (draws tipped)',I.drawLords,'')}
+        ${miniList('🦓 Contrarians (% against the crowd)',I.contrarian,'%')}
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-h"><h2><i class="tick"></i>Perfect Day Club</h2><span class="meta">clean sweeps</span></div>
+      <div class="card-b">
+        <div class="ins-sub">A clean sweep: every tip correct on a single match day (2+ matches). 🌟 means every one was the exact score.</div>
+        ${pdBody}
+      </div>
+    </section>
+
+    <section class="card ins-wide">
+      <div class="card-h"><h2><i class="tick"></i>Accuracy & sharpest tippers</h2><span class="meta">post-match</span></div>
+      <div class="card-b">${accBody}</div>
+    </section>
+  </div>`;
+}
+
+/* ---------- page navigation ---------- */
+function setPage(p){
+  STATE.page=p;
+  document.querySelectorAll('.page').forEach(el=>el.hidden = (el.id!=='page-'+p));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.page===p));
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 /* ---------- CSV parsing for refresh ---------- */
@@ -674,6 +970,8 @@ const shareBtn=document.getElementById('shareBtn');
 if(shareBtn) shareBtn.onclick=downloadViewer;
 if(MODE!=='admin'){ const aa=document.getElementById('adminActions'); if(aa) aa.style.display='none'; }
 
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>setPage(t.dataset.page));
+
 /* ---------- boot ---------- */
-buildModel(); renderStages(); renderSlicers(); renderAll();
+buildModel(); renderStages(); renderSlicers(); renderAll(); setPage('board');
 </script>
